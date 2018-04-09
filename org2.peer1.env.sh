@@ -1,4 +1,4 @@
-source base.sh
+#!/bin/bash
 # the following setting starts chaincode containers on the same
 # bridge network as the peers
 # https://docs.docker.com/compose/networking/
@@ -17,5 +17,3 @@ export CORE_PEER_EVENTS_ADDRESS=peer0.org1.example.com:10053
 export CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.example.com:10051
 export CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org2.example.com:10051
 export CORE_PEER_LOCALMSPID=Org2MSP
-
-peer node start  -o orderer.example.com:7050
