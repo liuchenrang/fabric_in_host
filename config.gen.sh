@@ -10,4 +10,4 @@ configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/gene
 configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
 configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
 
-source create.channel.sh
+# source create.channel.sh
