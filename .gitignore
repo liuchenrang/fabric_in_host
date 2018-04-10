@@ -1,2 +1,3 @@
-crypto-config
-
+fabcar/node_modules
+*_sk
+fabcar/hfc-key-store
