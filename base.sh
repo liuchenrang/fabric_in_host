@@ -5,5 +5,5 @@ export CORE_PEER_TLS_ENABLED=true
 export CORE_PEER_GOSSIP_USELEADERELECTION=true
 export CORE_PEER_GOSSIP_ORGLEADER=false
 export CORE_PEER_PROFILE_ENABLED=true
-export CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-
+export CORE_VM_ENDPOINT=unix:///var/run/docker.sock
+export FABRIC_START_TIMEOUT=300

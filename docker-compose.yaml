@@ -1,0 +1,17 @@
+# Copyright IBM Corp. All Rights Reserved.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+version: '2'
+networks:
+  byfn:
+services:
+  cli:
+    container_name: dev-peer0.org1.example.com-fabcar-1.0
+    image: dev-peer0.org1.example.com-fabcar-1.0-5c906e402ed29f20260ae42283216aa75549c571e2e380f3615826365d8269ba:latest
+    tty: true
+    command: /bin/bash -c ' while true; do  sleep 10000; done'
+    networks:
+      - byfn
+
