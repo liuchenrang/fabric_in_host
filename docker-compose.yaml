@@ -10,16 +10,16 @@ services:
   ca.example.com:
     image: hyperledger/fabric-ca:x86_64-1.0.6
     environment:
-      - FABRIC_CA_SERVER_CA_NAME=ca.org1.example.com
+      - FABRIC_CA_SERVER_CA_NAME=ca-org2
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/87baa9715dfe2bec1daf55e47f7fc6d190757b5806e7db46bd238e8dbead4cfb_sk
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.example.com-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/d1ea697004f4e097c4a8d0c09ea783a5b744fe6c4ee630d028f1c4b4dd7f4d53_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/org1.example.com/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.org1.example.com
+    container_name: ca-org2
     networks:
       - byfn
 

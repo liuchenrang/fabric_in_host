@@ -13,6 +13,6 @@ export FABRIC_CA_SERVER_TLS_CERTFILE=$FABRIC_CA_HOME/ca.org1.example.com-cert.pe
 export FABRIC_CA_SERVER_TLS_KEYFILE=$FABRIC_CA_HOME/$CA1_PRIVATE_KEY
 
 # fabric-ca-server $@
-rm -f $FABRIC_CA_HOME/fabric-ca-server.db
-rm -f $FABRIC_CA_HOME/fabric-ca-server-config.yaml
-fabric-ca-server  start  -b admin:adminpw -d
+# rm -f $FABRIC_CA_HOME/fabric-ca-server.db
+ls $FABRIC_CA_HOME/fabric-ca-server-config.yaml
+fabric-ca-server   start  --ca.certfile  $FABRIC_CA_SERVER_TLS_CERTFILE --ca.keyfile $FABRIC_CA_SERVER_TLS_KEYFILE -b admin:adminpw -d
