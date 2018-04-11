@@ -22,10 +22,11 @@
 4. fabric-ca golang1.9 版本v1.0.6
     
     1. 问题 
-      1. No certificates found for provided serial and aki
-      2. fabric-ca request register failed with errors [[{"code":400,"message":"Authorization failure"}]]
-    2.   
-    3.   
+      1. DB: Get certificate by serial (5a4cc5d56d05b3a846dd3678a76db90231506d2c) and aki (83a266928e6e303b00cb7745890fc9a1a660181938e6b301b41dc9e29fd6ebe2)
+      2. No certificates found for provided serial and aki
+      3. fabric-ca request register failed with errors [[{"code":400,"message":"Authorization failure"}]]
+       
+    2.调整数据库字段serial_number authority_key_identifier 为varchar 2000 修改数据补上 serial 和 aki
 5. Authorization for INSTALL has been denied (error-Failed verifying that proposal's creator satisfies local MSP
     chaincode 安装者必须是admin的msp
 ```bash
@@ -42,3 +43,4 @@ export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/o
 
 6. anchor节点哪里来的, 怎么更改端口信息
   1. 来自configtx.yaml 这个信息会正常anchor的msp文件 无法改变
+7. 需要自建dns服务, 由于docker 启动chaincode 使用的是域名加端口的方式进行tcp通信
