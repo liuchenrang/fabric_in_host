@@ -8,4 +8,10 @@ export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/o
 peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
 	
 
-    
+CHANNEL_NAME=mychannel
+export CORE_PEER_LOCALMSPID=Org2MSP
+export CORE_PEER_TLS_ENABLED=true
+ORDERER_CA=crypto-config/ordererOrganizations/example.com/tlsca/tlsca.example.com-cert.pem 
+export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/${CORE_PEER_LOCALMSPID}anchors.tx --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA
+	

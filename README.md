@@ -39,3 +39,6 @@ export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/o
   3.  数据库错乱问题 删除数据库尝试
   4.  ca 版本要对应 1.0.6 有bug
       需要调整数据库结构补全admin的serial (332933d0e86d3abcb5bbde44432ef4adecf666bd) and aki (aa40d120c9f06a7e5bbded637293f7a78ae5afed2107d83fd2c0d65f61ff8e8d)
+
+6. anchor节点哪里来的, 怎么更改端口信息
+  1. 来自configtx.yaml 这个信息会正常anchor的msp文件 无法改变

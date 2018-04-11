@@ -55,7 +55,7 @@ logging:
         gossip: warning
 
     # Message format for the peer logs
-    format: '%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}'
+    format: '%{color}%{time:2006-01-02 15:04:05.000 MST} [%{module}] %{shortfile} %{shortfunc} -> %{level:.4s} %{id:03x}%{color:reset} %{message}'
 
 ###############################################################################
 #
@@ -133,7 +133,7 @@ peer:
         # Important: The endpoints here have to be endpoints of peers in the same
         # organization, because the peer would refuse connecting to these endpoints
         # unless they are in the same organization as the peer.
-        bootstrap: 127.0.0.1:7051
+        bootstrap: 
 
         # NOTE: orgLeader and useLeaderElection parameters are mutual exclusive.
         # Setting both to true would result in the termination of the peer
@@ -203,7 +203,7 @@ peer:
         reconnectInterval: 25s
         # This is an endpoint that is published to peers outside of the organization.
         # If this isn't set, the peer will not be known to other organizations.
-        externalEndpoint:
+        bootstrap: 
         # Leader election service configuration
         election:
             # Longest time peer waits for stable membership during leader election startup (unit: second)
