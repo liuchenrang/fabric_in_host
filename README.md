@@ -44,3 +44,5 @@ export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/o
 6. anchor节点哪里来的, 怎么更改端口信息
   1. 来自configtx.yaml 这个信息会正常anchor的msp文件 无法改变
 7. 需要自建dns服务, 由于docker 启动chaincode 使用的是域名加端口的方式进行tcp通信
+
+8. 如果删除重新跑,记得删除老的chancode的运行docker image
