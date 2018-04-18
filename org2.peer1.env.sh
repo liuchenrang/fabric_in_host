@@ -17,6 +17,12 @@ export CORE_PEER_CHAINCODELISTENADDRESS=peer1.org2.example.com:10052
 export CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org2.example.com:9051
 export CORE_PEER_LOCALMSPID=Org2MSP
 
-sed -i "" "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.1\/production/" core.yaml
+platform=`uname`
+if [ $platform = "Darwin" ]; then
+    alias ised='sed -i ""'
+else 
+    alias ised='sed -i'
+fi;
+ised  -i "" "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.1\/production/" core.yaml
 cp core.yaml $FABRIC_CFG_PATH
 
