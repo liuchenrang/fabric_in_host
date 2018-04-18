@@ -46,3 +46,16 @@ export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/o
 7. 需要自建dns服务, 由于docker 启动chaincode 使用的是域名加端口的方式进行tcp通信
 
 8. 如果删除重新跑,记得删除老的chancode的运行docker image
+
+
+#构建环境
+ ##依赖
+ 1. curl -s https://raw.githubusercontent.com/oscm/shell/master/virtualization/docker/docker.centos7.ce.sh | bash 
+ 2.  curl -s https://raw.githubusercontent.com/oscm/shell/master/virtualization/docker/docker-compose/docker-compose-1.19.0.sh | bash 
+ 3. yum install libtool-ltdl-devel
+ 4. go get -u github.com/hyperledger/fabric/core/chaincode/shim
+ ##编译
+ 1. go get github.com/hyperledger/fabric-ca
+    1. cd $GOPATH/src/github.com/hyperledger/fabric-ca && make fabric-ca-server fabric-ca-client
+ 2. go get github.com/hyperledger/fabric
+    1. cd $GOPATH/src/github.com/hyperledger/fabric make configtxgen cryptogen configtxlator orderer peer
