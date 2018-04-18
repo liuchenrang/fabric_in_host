@@ -6,11 +6,10 @@ export BASE_PATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/org2.example.co
 export FABRIC_CFG_PATH=$BASE_PATH
 platform=`uname`
 if [ $platform = "Darwin" ]; then
-    alias ised='sed -i ""'
+    sed -i "" "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.0\/production/" core.yaml
 else 
-    alias ised='sed -i'
+    sed -i "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.0\/production/" core.yaml
 fi;
-ised  "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.0\/production/" core.yaml
 cp core.yaml $FABRIC_CFG_PATH
 
 export CORE_PEER_TLS_CERT_FILE=$FABRIC_CFG_PATH/tls/server.crt

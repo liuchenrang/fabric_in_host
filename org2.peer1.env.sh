@@ -19,10 +19,9 @@ export CORE_PEER_LOCALMSPID=Org2MSP
 
 platform=`uname`
 if [ $platform = "Darwin" ]; then
-    alias ised='sed -i ""'
+    sed -i "" "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.1\/production/" core.yaml
 else 
-    alias ised='sed -i'
+    sed -i "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.1\/production/" core.yaml
 fi;
-ised  "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org2.1\/production/" core.yaml
 cp core.yaml $FABRIC_CFG_PATH
 
