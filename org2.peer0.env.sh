@@ -14,5 +14,7 @@ export CORE_PEER_ID=peer0.org2.example.com
 export CORE_PEER_ADDRESS=peer0.org2.example.com:9051
 export CORE_PEER_LISTENADDRESS=0.0.0.0:9051
 export CORE_PEER_EVENTS_ADDRESS=peer0.org2.example.com:9053
+export CORE_PEER_CHAINCODELISTENADDRESS=peer0.org2.example.com:9052
+
 export CORE_PEER_LOCALMSPID=Org2MSP
 export CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org2.example.com:10051
