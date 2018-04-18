@@ -25,4 +25,3 @@ export CORE_PEER_EVENTS_ADDRESS=peer0.org1.example.com:7053
 export CORE_PEER_CHAINCODELISTENADDRESS=peer0.org1.example.com:7052
 export CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.example.com:8051
 export CORE_PEER_LOCALMSPID=Org1MSP
-exit
