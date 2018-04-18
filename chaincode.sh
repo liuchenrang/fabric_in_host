@@ -1,4 +1,5 @@
 #!/bin/bash
+cp -rf chaincode $GOPATH/src
 # 将first-fabric 的 chaincode 拷贝到 $GOPATH/src 下
 bash ./cli.sh  chaincode install -n fabcar -v 1.0 -p chaincode/fabcar
 
