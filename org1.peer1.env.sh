@@ -10,7 +10,7 @@ if [ $platform = "Darwin" ]; then
 else 
     alias ised='sed -i'
 fi;
-ised  -i "" "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org1.1\/production/" core.yaml
+ised   "s/fileSystemPath:.*/fileSystemPath: \/var\/hyperledger\/org1.1\/production/" core.yaml
 
 cp core.yaml $FABRIC_CFG_PATH
 
