@@ -46,7 +46,8 @@ export CORE_PEER_MSPCONFIGPATH=$CONFIG_TX_PATH/crypto-config/peerOrganizations/o
 7. 需要自建dns服务, 由于docker 启动chaincode 使用的是域名加端口的方式进行tcp通信
 
 8. 如果删除重新跑,记得删除老的chancode的运行docker image
-
+9. 重新安装后, 由于docker 之前的chaincode 没有删除导致调用chaincode tls 错误, 表现是调用者卡主, peer死锁等待
+    解决方式是docker删除老的chaincode 镜像,重启peer节点
 
 #构建环境
  ##依赖
